@@ -1,4 +1,4 @@
 <?php
 
 
-require "./views/index.view.php";
+require VIEW_PATH . "index.view.php";

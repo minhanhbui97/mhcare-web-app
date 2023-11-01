@@ -31,7 +31,7 @@
 
 
   <div class="container">
-    <form action="/controllers/login.php" method="POST">
+    <form action="/login" method="POST">
       <div class="full-width text-center">
         <h3>
           Employee Login
@@ -41,7 +41,7 @@
 
       <div class="required">
         <label class="form-label control-label">Username</label>
-        <input type="text" class="form-control" id="userName" name="userName" required>
+        <input type="text" class="form-control" id="username" name="username" required>
       </div>
 
       <div class="required">
@@ -59,4 +59,4 @@
 
 <?php require (VIEW_PATH . 'partials/footer.php'); ?>
 
-<?= var_dump($_POST.'username'); ?>
+<!-- <?= var_dump($_POST.'username'); ?> -->

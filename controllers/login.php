@@ -1,10 +1,10 @@
 <?php
 
-if (isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) {    
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($username === 'test' && $password === 'test') {
-        header("Location: ./employee-workspace.php");
+        header("Location: /employee-workspace");
         exit();
     }
 }

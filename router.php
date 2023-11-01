@@ -13,7 +13,8 @@ $routes = [
 ];
 
 function routeToController($uri, $routes) {
-    echo $routes[$uri];
+    // header("Location: /employee-workspace");
+
     if (array_key_exists($uri, $routes)) {
         require $routes[$uri];
     } else {
@@ -22,14 +23,15 @@ function routeToController($uri, $routes) {
 }
 
 function abort($code = 404) {
+    http_response_code($code);
 
-    echo $_SERVER['REQUEST_URI'];
-    // http_response_code($code);
+    require VIEW_PATH . "{$code}.php";
 
-    // require "views/{$code}.php";
-
-    // die();
+    die();
 }
 
+
 routeToController($uri, $routes);
+
+// header("Location: /employee-workspace");
 

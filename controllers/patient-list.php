@@ -1,3 +1,3 @@
 <?php
 
-require "views/patient-list.view.php";
+require VIEW_PATH . "patient-list.view.php";

@@ -34,13 +34,13 @@
     <h1 class="text-center"> Employee Workspace Menu </h1>
 
     <div style="text-align:center;">
-        <a href="patient-list.php"><button class="btn btn-primary">
+        <a href="patients"><button class="btn btn-primary">
                 View Patient List
             </button></a>
     </div>
 
     <div style="text-align:center;">
-        <a href="add-patient-detail.php"><button class="btn btn-primary">
+        <a href="patient/add"><button class="btn btn-primary">
                 Register New Patient
             </button></a>
     </div>

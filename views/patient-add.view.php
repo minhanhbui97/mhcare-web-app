@@ -32,7 +32,7 @@
     </nav>
 </div>
 <div class="container">
-    <form action="add-patient-detail.php" method="POST">
+    <form action="patient/add" method="POST">
       <div class="full-width text-center">
         <h3>
             Register New Patient

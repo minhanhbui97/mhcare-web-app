@@ -8,14 +8,11 @@ $query = "SELECT * FROM user";
 
 $db = new Database($db_config['database']);
 
-$users = $db->query($query)->fetchAll();
+$users = $db->query($query,[])->get();
 
-// dumpAndDie($users);
 
 
 $usernames = array_column($users, 'username');
-
-
 
 if (isset($_POST['username']) && isset($_POST['password'])) {    
     $username = $_POST['username'];

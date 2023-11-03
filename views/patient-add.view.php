@@ -32,7 +32,7 @@
     </nav>
 </div>
 <div class="container">
-    <form action="patient/add" method="POST">
+    <form action="/patient/add" method="POST">
       <div class="full-width text-center">
         <h3>
             Register New Patient
@@ -42,15 +42,15 @@
 
       <div class="required">
         <label class="form-label control-label">First Name</label>
-        <input type="text" class="form-control" name="firstName" required>
+        <input type="text" class="form-control" name="first_name" required>
       </div>
 
       <div class="required">
         <label class="form-label control-label">Last Name</label>
-        <input type="text" class="form-control" name="lastName" required>
+        <input type="text" class="form-control" name="last_name" required>
       </div>
 
-      <div class="required">
+      <!-- <div class="required">
         <label class="form-label control-label">Gender</label>
         <input type="text" class="form-control" name="gender" required>
       </div>
@@ -103,14 +103,14 @@
       <div>
         <label class="form-label control-label">Referring Doctor</label>
         <input type="text" class="form-control" name="referringDoctor">
-      </div>
+      </div> -->
 
       <div class="full-width" style="text-align:center;">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
 
       <div class="full-width" style="text-align:center;">
-        <a href="patient-list.php"><button class="btn btn-secondary">Cancel</button></a>
+        <a href="patients"><button class="btn btn-secondary">Cancel</button></a>
       </div>
 
     </form>

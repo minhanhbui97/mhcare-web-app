@@ -59,7 +59,7 @@
                 <td>
                     <a href="/patient?id=<?= $patient['id'] ?>" class="link-primary">View Details</a>
                       |  
-                    <a href="#" class="link-secondary">Edit</a>
+                    <a href="/patient/edit?id=<?= $patient['id'] ?>" class="link-secondary">Edit</a>
                       |  
                     <a href="#" class="link-secondary">Remove</a>
                 </td>

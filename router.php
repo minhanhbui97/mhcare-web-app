@@ -6,6 +6,8 @@ $routes = [
     '/' => 'controllers/index.php',
     '/patient/add' => 'controllers/patient-add.php',
     '/patient/edit' => 'controllers/patient-edit.php',
+    '/patient/delete' => 'controllers/patient-delete.php',
+
     '/patient' => 'controllers/patient.php',
     '/patients' => 'controllers/patients.php',
     // '/patient-list' => 'controllers/patient-list.php',

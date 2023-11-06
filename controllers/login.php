@@ -1,13 +1,9 @@
 <?php
 
 $db_config = require('config.php');
-
-$query = "SELECT * FROM user";
-
 $db = new Database($db_config['database']);
-
+$query = "SELECT * FROM user";
 $users = $db->query($query,[])->get();
-
 
 
 $usernames = array_column($users, 'username');

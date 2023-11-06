@@ -1,7 +1,6 @@
 <?php
 
 $db_config = require('config.php');
-
 $db = new Database($db_config['database']);
 
 

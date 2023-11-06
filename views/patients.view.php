@@ -57,7 +57,7 @@
                 <td><?= $patient['first_name'] ?></td>
                 <td><?= $patient['last_name'] ?></td>
                 <td>
-                    <a href="#" class="link-primary">View Details</a>
+                    <a href="/patient?id=<?= $patient['id'] ?>" class="link-primary">View Details</a>
                       |  
                     <a href="#" class="link-secondary">Edit</a>
                       |  

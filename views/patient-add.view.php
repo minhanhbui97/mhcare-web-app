@@ -146,4 +146,3 @@
 
 <?php require('views/partials/footer.php'); ?>
 
-<?= var_dump($_SERVER) ?>

@@ -4,6 +4,7 @@
 
 <?php require('views/partials/nav.php'); ?>
 
+
 <div class="container-fluid banner">
     <div class="row align-items-center justify-content-between">
         <div class="col-md image-container">
@@ -25,7 +26,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item"><a href="employee-workspace">Employee Workspace</a></li>
+            <li class="breadcrumb-item"><a href="http://localhost/employee-workspace">Employee Workspace</a></li>
             <li class="breadcrumb-item" aria-current="page">Register New Patient</li>
 
         </ol>
@@ -109,9 +110,9 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
 
-      <div class="full-width" style="text-align:center;">
-        <a href="patients"><button class="btn btn-secondary">Cancel</button></a>
-      </div>
+      <!-- <div class="full-width" style="text-align:center;">
+        <a href="http://localhost/employee-workspace"><button class="btn btn-secondary">Cancel</button></a>
+      </div> -->
 
     </form>
 
@@ -144,3 +145,5 @@
 </div> -->
 
 <?php require('views/partials/footer.php'); ?>
+
+<?= var_dump($_SERVER) ?>

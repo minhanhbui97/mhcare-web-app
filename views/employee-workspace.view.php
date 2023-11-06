@@ -4,6 +4,7 @@
 
 <?php require('views/partials/nav.php'); ?>
 
+
 <div class="container-fluid banner">
     <div class="row align-items-center justify-content-between">
         <div class="col-md image-container">

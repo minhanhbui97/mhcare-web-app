@@ -8,7 +8,6 @@ $routes = [
     '/patient/edit' => 'controllers/patient-edit.php',
     '/patient' => 'controllers/patient.php',
     '/patients' => 'controllers/patients.php',
-
     // '/patient-list' => 'controllers/patient-list.php',
     // '/patient-detail' => 'controllers/patient-detail.php',
     // '/add-patient-detail' => 'controllers/add-patient-detail.php',

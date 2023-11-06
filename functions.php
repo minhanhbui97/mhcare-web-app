@@ -1,8 +1,5 @@
 <?php
 
-// function basePath($path) {
-//     return '/assignment3' . '/' . $path;
-// }
 
 function dumpAndDie($value){
     echo "<pre>";

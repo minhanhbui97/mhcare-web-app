@@ -1,7 +1,5 @@
 <?php
 
-// require "views/add-patient-detail.view.php";
-
 $db_config = require('config.php');
 
 $db = new Database($db_config['database']);
@@ -16,4 +14,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 // dumpAndDie($_POST) ;
 
-require "views/patient-add.view.php";
+require VIEW_PATH . "patient-add.view.php";

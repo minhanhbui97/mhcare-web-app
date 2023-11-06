@@ -2,8 +2,10 @@
 
 
 require 'functions.php';
-require 'router.php';
 require 'Database.php';
+require 'router.php';
+
+
 
 // $db_config = require('config.php');
 
@@ -19,13 +21,13 @@ require 'Database.php';
 
 
 
-$db_config = require('config.php');
+// $db_config = require('config.php');
 
-$query = "SELECT * FROM user";
+// $query = "SELECT * FROM user";
 
-$db = new Database($db_config['database']);
+// $db = new Database($db_config['database']);
 
-$users = $db->query($query)->get();
+// $users = $db->query($query)->get();
 
-dumpAndDie($users);
+// dumpAndDie($users);
 

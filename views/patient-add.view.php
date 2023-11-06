@@ -25,7 +25,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item" aria-current="page"><a href="employee-workspace.php">Employee Workspace</a></li>
+            <li class="breadcrumb-item"><a href="employee-workspace">Employee Workspace</a></li>
             <li class="breadcrumb-item" aria-current="page">Register New Patient</li>
 
         </ol>

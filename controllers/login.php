@@ -1,7 +1,5 @@
 <?php
 
-require 'Database.php';
-
 $db_config = require('config.php');
 
 $query = "SELECT * FROM user";

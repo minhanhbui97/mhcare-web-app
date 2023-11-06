@@ -26,7 +26,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Home</li>
-            <li class="breadcrumb-item"><a href="employee-workspace.php">Employee Workspace</a></li>
+            <li class="breadcrumb-item"><a href="employee-workspace">Employee Workspace</a></li>
             <li class="breadcrumb-item" aria-current="page">Patient List</a></li>
 
         </ol>
@@ -44,13 +44,29 @@
                 <th scope="col">ID</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
-                <th scope="col">Gender</th>
-                <th scope="col">DOB</th>
+                <!-- <th scope="col">Gender</th> -->
+                <!-- <th scope="col">DOB</th> -->
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
+
+        <?php foreach ($patients as $patient) : ?>
             <tr>
+                <th scope="row"><?= $patient['id'] ?></th>
+                <td><?= $patient['first_name'] ?></td>
+                <td><?= $patient['last_name'] ?></td>
+                <td>
+                    <a href="#" class="link-primary">View Details</a>
+                      |  
+                    <a href="#" class="link-secondary">Edit</a>
+                      |  
+                    <a href="#" class="link-secondary">Remove</a>
+                </td>
+            </tr>
+
+        <?php endforeach; ?> 
+            <!-- <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -77,7 +93,7 @@
                 <td>Watson</td>
                 <td>Female</td>
                 <td>January 10th, 1996</td>
-            </tr>
+            </tr> -->
         </tbody>
     </table>
 

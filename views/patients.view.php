@@ -60,11 +60,9 @@
                     <a href="/patient?id=<?= $patient['id'] ?>" class="link-primary">View Details</a>
                       |  
                     <a href="/patient/edit?id=<?= $patient['id'] ?>" class="link-secondary">Edit</a>
-                      |  
-                    <form action="/patient/delete" method="POST">
-                        <input type="text" value="<?= $patient['id'] ?>" name="patient_id"></input>
-                        <!-- <a href="/patient/delete" class="link-secondary">Remove</a> -->
-                        <button type="submit" class="link-secondary">Remove</button>
+                    |  <form action="/patient/delete" method="POST">
+                        <input type="hidden" value="<?= $patient['id'] ?>" name="patient_id"></input>
+                        <button type="submit" class="btn btn-outline-secondary">Remove</button>
                     </form>
 
 

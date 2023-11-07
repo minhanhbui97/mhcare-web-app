@@ -33,7 +33,7 @@
     </nav>
 </div>
 <div class="container">
-    <form action="/patient/edit" method="POST">
+    <form action="/patient/edit" method="POST" class="form">
       <div class="full-width text-center">
         <h3>
             Update Patient Information

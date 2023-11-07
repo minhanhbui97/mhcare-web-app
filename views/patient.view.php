@@ -33,7 +33,7 @@
     </nav>
 </div>
 <div class="container">
-    <form>
+    <form class="form">
       <div class="full-width text-center">
         <h3>
             Patient Information

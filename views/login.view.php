@@ -31,7 +31,7 @@
 
 
   <div class="container">
-    <form action="/login" method="POST">
+    <form action="/login" method="POST" class="form">
       <div class="full-width text-center">
         <h3>
           Employee Login

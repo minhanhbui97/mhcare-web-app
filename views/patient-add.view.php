@@ -32,7 +32,7 @@
         </ol>
     </nav>
 </div>
-<div class="container">
+<div class="container form">
     <form action="/patient/add" method="POST">
       <div class="full-width text-center">
         <h3>

@@ -2,6 +2,8 @@
 
 $db_config = require('config.php');
 $db = new Database($db_config['database']);
+
+
 $query = "INSERT INTO `patient` (`patient_id`, `first_name`, `last_name`, `gender`, `date_of_birth`, `address_1`, `address_2`, `city`, `province`, `postal_code`, `phone_number`, `email`, `doctor_id`, `referring_doctor_id`) VALUES (NULL, :first_name, :last_name, :gender, :date_of_birth, :address_1, :address_2, :city, :province, :postal_code, :phone_number, :email, NULL, NULL)";
 // TO DO: missing columns
 
@@ -23,7 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
 
     header("Location: /patients");
-};
+}
+
+
+;
 
 
 require VIEW_PATH . "patient-add.view.php";

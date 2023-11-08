@@ -67,11 +67,6 @@
                         <input type="hidden" value="<?= $patient['patient_id'] ?>" name="patient_id"></input>
                         <button type="submit" class="btn btn-link">Remove</button>
                     </form>
-
-
-                    <div class="full-width" style="text-align:center;">
-        
-      </div>
                 </td>
             </tr>
 

@@ -17,10 +17,9 @@ $doctor_name = $db->query($query_2,[':id' => $id])->find();
 // Get referring_doctor name from referring_doctor table
 $query_3 = "SELECT CONCAT(referring_doctor.first_name, ' ', referring_doctor.last_name) as referring_doctor_name FROM referring_doctor INNER JOIN patient ON patient.referring_doctor_id = patient.referring_doctor_id WHERE patient.patient_id = :id;";
 $referring_doctor_name = $db->query($query_3,[':id' => $id])->find();
-// dumpAndDie($referring_doctor_name); 
-
 
 // Get list of medications
+
 
 // Get list of allergies
 

@@ -27,7 +27,8 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item">Home</li>
             <li class="breadcrumb-item"><a href="http://localhost/employee-workspace">Employee Workspace</a></li>
-            <li class="breadcrumb-item" aria-current="page">Register New Patient</li>
+            <li class="breadcrumb-item"><a href="http://localhost/patients">Patient List</a></li>
+            <li class="breadcrumb-item" aria-current="page">Patient Information</li>
 
         </ol>
     </nav>
@@ -44,7 +45,7 @@
 
       <div>
         <label class="form-label control-label full-width">Patient ID</label>
-        <input type="text" class="form-control" name="patient_id" value="<?= $patient['id'] ?>" disabled readonly>
+        <input type="text" class="form-control" name="patient_id" value="<?= $patient['patient_id'] ?>" disabled readonly>
       </div>
 
       <br></br>
@@ -59,71 +60,55 @@
         <input type="text" class="form-control" name="last_name" value="<?= $patient['last_name'] ?>" disabled readonly>
       </div>
 
-      <!-- <div class="required">
+      <div>
         <label class="form-label control-label">Gender</label>
-        <input type="text" class="form-control" name="gender" required>
-      </div>
-
-      <div class="required">
-        <label class="form-label control-label">Date of Birth</label>
-        <input type="text" class="form-control" name="dateOfBirth" required>
+        <input type="text" class="form-control" name="gender" value="<?= $patient['gender'] ?>" disabled readonly>
       </div>
 
       <div>
-        <label class="form-label control-label">Address</label>
-        <input type="text" class="form-control" name="address" >
+        <label class="form-label control-label">Date of Birth</label>
+        <input type="text" class="form-control" name="date_of_birth" value="<?= $patient['date_of_birth'] ?>" disabled readonly>
+      </div>
+
+      <div>
+        <label class="form-label control-label">Address 1</label>
+        <input type="text" class="form-control" name="address_1" value="<?= $patient['address_1'] ?>" disabled readonly>
+      </div>
+
+      <div>
+        <label class="form-label control-label">Address 2</label>
+        <input type="text" class="form-control" name="address_1" value="<?= $patient['address_2'] ?>" disabled readonly>
       </div>
 
       <div>
         <label class="form-label control-label">City</label>
-        <input type="text" class="form-control" name="city" >
+        <input type="text" class="form-control" name="city" value="<?= $patient['city'] ?>" disabled readonly>
       </div>
 
       <div>
         <label class="form-label control-label">Province</label>
-        <input type="text" class="form-control" name="province" >
+        <input type="text" class="form-control" name="province" value="<?= $patient['province'] ?>" disabled readonly>
       </div>
 
       <div>
         <label class="form-label control-label">Postal Code</label>
-        <input type="text" class="form-control" name="postalCode" >
+        <input type="text" class="form-control" name="postal_code" value="<?= $patient['postal_code'] ?>" disabled readonly>
       </div>
 
       <div>
-        <label class="form-label control-label">Phone</label>
-        <input type="text" class="form-control" name="phone" >
+        <label class="form-label control-label">Phone Number</label>
+        <input type="tel" class="form-control" name="phone_number" value="<?= $patient['phone_number'] ?>" disabled readonly>
       </div>
 
-      <div class="required">
+      <div>
         <label class="form-label control-label">Email</label>
-        <input type="email" class="form-control" name="email" required>
+        <input type="email" class="form-control" name="email" value="<?= $patient['email'] ?>" disabled readonly>
       </div>
-
-      <div>
-        <label class="form-label control-label">List of Current Medications</label>
-        <input type="text" class="form-control" name="listMedications">
-      </div>
-
-      <div>
-        <label class="form-label control-label">List of Allergies</label>
-        <input type="text" class="form-control" name="listAllergies">
-      </div>
-
-      <div>
-        <label class="form-label control-label">Referring Doctor</label>
-        <input type="text" class="form-control" name="referringDoctor">
-      </div> -->
-
-      <!-- <div class="full-width" style="text-align:center;">
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div> -->
-
-      <!-- <div class="full-width" style="text-align:center;">
-        <a href="http://localhost/employee-workspace"><button class="btn btn-secondary">Cancel</button></a>
-      </div> -->
 
     </form>
 
+    <a href="patients"><button class="btn btn-link"> Back </button></a>
+    
   </div>
 
 <!-- <div class="index-text container-border">

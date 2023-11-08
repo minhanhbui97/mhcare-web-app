@@ -2,7 +2,7 @@
 
 $db_config = require('config.php');
 $db = new Database($db_config['database']);
-$query = "SELECT * FROM user";
+$query = "SELECT * FROM employee";
 $users = $db->query($query,[])->get();
 
 

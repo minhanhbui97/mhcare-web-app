@@ -44,8 +44,8 @@
                 <th scope="col">ID</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
-                <!-- <th scope="col">Gender</th> -->
-                <!-- <th scope="col">DOB</th> -->
+                <th scope="col">Gender</th>
+                <th scope="col">DOB</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -53,16 +53,18 @@
 
         <?php foreach ($patients as $patient) : ?>
             <tr>
-                <th scope="row"><?= $patient['id'] ?></th>
+                <th scope="row"><?= $patient['patient_id'] ?></th>
                 <td><?= $patient['first_name'] ?></td>
                 <td><?= $patient['last_name'] ?></td>
+                <td><?= $patient['gender'] ?></td>
+                <td><?= $patient['date_of_birth'] ?></td>
                 <td>
-                    <a href="/patient?id=<?= $patient['id'] ?>" class="link-primary">View Details</a>
+                    <a href="/patient?id=<?= $patient['patient_id'] ?>" class="link-primary">View Details</a>
                       |  
-                    <a href="/patient/edit?id=<?= $patient['id'] ?>" class="link-secondary">Edit</a>
+                    <a href="/patient/edit?id=<?= $patient['patient_id'] ?>" class="link-secondary">Edit</a>
                       |  
                     <form action="/patient/delete" method="POST">
-                        <input type="hidden" value="<?= $patient['id'] ?>" name="patient_id"></input>
+                        <input type="hidden" value="<?= $patient['patient_id'] ?>" name="patient_id"></input>
                         <button type="submit" class="btn btn-link">Remove</button>
                     </form>
 

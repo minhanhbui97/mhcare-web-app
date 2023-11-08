@@ -1,8 +1,8 @@
 <?php $name = "Mao Phoc" ; ?>
 
-<?php require('views/partials/head.php'); ?>
+<?php require (VIEW_PATH . 'partials/head.php'); ?>
 
-<?php require('views/partials/nav.php'); ?>
+<?php require (VIEW_PATH . 'partials/nav.php'); ?>
 
 
 <div class="container-fluid banner">
@@ -43,7 +43,7 @@
 
       <div>
         <label class="form-label control-label">Patient ID</label>
-        <input type="text" class="form-control" name="patient_id" value="<?= $patient['id'] ?>">
+        <input type="text" class="form-control" name="patient_id" value="<?= $patient['patient_id'] ?>" readonly>
       </div>
 
       <div>
@@ -56,47 +56,52 @@
         <input type="text" class="form-control" name="last_name" value="<?= $patient['last_name'] ?>">
       </div>
 
-      <!-- <div class="required">
+      <div>
         <label class="form-label control-label">Gender</label>
-        <input type="text" class="form-control" name="gender" required>
-      </div>
-
-      <div class="required">
-        <label class="form-label control-label">Date of Birth</label>
-        <input type="text" class="form-control" name="dateOfBirth" required>
+        <input type="text" class="form-control" name="gender" value="<?= $patient['gender'] ?>">
       </div>
 
       <div>
-        <label class="form-label control-label">Address</label>
-        <input type="text" class="form-control" name="address" >
+      <label class="form-label control-label">Date of Birth</label>
+        <input type="text" class="form-control" name="date_of_birth" value="<?= $patient['date_of_birth'] ?>">
+      </div>
+
+      <div>
+        <label class="form-label control-label">Address 1</label>
+        <input type="text" class="form-control" name="address_1" value="<?= $patient['address_1'] ?>">
+      </div>
+
+      <div>
+        <label class="form-label control-label">Address 2</label>
+        <input type="text" class="form-control" name="address_2" value="<?= $patient['address_2'] ?>">
       </div>
 
       <div>
         <label class="form-label control-label">City</label>
-        <input type="text" class="form-control" name="city" >
+        <input type="text" class="form-control" name="city" value="<?= $patient['city'] ?>">
       </div>
 
       <div>
         <label class="form-label control-label">Province</label>
-        <input type="text" class="form-control" name="province" >
+        <input type="text" class="form-control" name="province" value="<?= $patient['province'] ?>">
       </div>
 
       <div>
         <label class="form-label control-label">Postal Code</label>
-        <input type="text" class="form-control" name="postalCode" >
+        <input type="text" class="form-control" name="postal_code" value="<?= $patient['postal_code'] ?>">
       </div>
 
       <div>
-        <label class="form-label control-label">Phone</label>
-        <input type="text" class="form-control" name="phone" >
+        <label class="form-label control-label">Phone Number</label>
+        <input type="text" class="form-control" name="phone_number" value="<?= $patient['phone_number'] ?>">
       </div>
 
-      <div class="required">
+      <div>
         <label class="form-label control-label">Email</label>
-        <input type="email" class="form-control" name="email" required>
+        <input type="email" class="form-control" name="email" value="<?= $patient['email'] ?>">
       </div>
 
-      <div>
+      <!-- <div>
         <label class="form-label control-label">List of Current Medications</label>
         <input type="text" class="form-control" name="listMedications">
       </div>
@@ -120,4 +125,4 @@
   </div>
 
 
-<?php require('views/partials/footer.php'); ?>
+<?php require (VIEW_PATH . 'partials/footer.php'); ?>

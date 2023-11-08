@@ -1,2 +1,5 @@
 - escape all user input where it can be displayed (e.g. patient info)
 - update You are logged in as <?= $name ?>
+- login: TO DO: If username or password not match, show an error message
+
+- patient, add/edit patient: doctor_id, referring_doctor_id, allergy, medication

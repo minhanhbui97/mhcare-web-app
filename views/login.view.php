@@ -30,33 +30,31 @@
 </div>
 
 
-  <div class="container">
-    <form action="/login" method="POST" class="form">
-      <div class="full-width text-center">
-        <h3>
-          Employee Login
-        </h3>
+<div class="container">
+  <form action="/login" method="POST" class="form">
+    <div class="full-width text-center">
+      <h3>
+        Employee Login
+      </h3>
 
-      </div>
+    </div>
 
-      <div class="required">
-        <label class="form-label control-label">Username</label>
-        <input type="text" class="form-control" id="username" name="username" required>
-      </div>
+    <div class="required">
+      <label class="form-label control-label">Username</label>
+      <input type="text" class="form-control" id="username" name="username" required>
+    </div>
 
-      <div class="required">
-        <label class="form-label control-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" required>
-      </div>
+    <div class="required">
+      <label class="form-label control-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
 
 
-      <div class="full-width" style="text-align:center;">
-        <button type="submit" class="btn btn-primary" id="submit_btn">Log In</button>
-      </div>
-    </form>
+    <div class="full-width" style="text-align:center;">
+      <button type="submit" class="btn btn-primary" id="submit_btn">Log In</button>
+    </div>
+  </form>
 
-  </div>
+</div>
 
 <?php require (VIEW_PATH . 'partials/footer.php'); ?>
-
-<!-- <?= var_dump($_POST.'username'); ?> -->

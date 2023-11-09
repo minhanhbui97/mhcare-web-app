@@ -48,7 +48,7 @@
       <input type="text" class="form-control" name="patient_id" value="<?= $patient['patient_id'] ?>" disabled readonly>
     </div>
 
-    <br></br>
+    <br />
 
     <div>
       <label class="form-label control-label">First Name</label>
@@ -90,6 +90,8 @@
       <input type="text" class="form-control" name="province" value="<?= $patient['province'] ?>" disabled readonly>
     </div>
 
+
+    
     <div>
       <label class="form-label control-label">Postal Code</label>
       <input type="text" class="form-control" name="postal_code" value="<?= $patient['postal_code'] ?>" disabled readonly>
@@ -107,23 +109,44 @@
 
     <div>
       <label class="form-label control-label">Doctor</label>
-      <input type="email" class="form-control" name="doctor" value="<?= $doctor_name['doctor_name']?>" disabled readonly>
+      <input type="email" class="form-control" name="doctor" value="<?= $doctor_name['doctor_name'] ?>" disabled readonly>
     </div>
 
     <div>
       <label class="form-label control-label">Referring Doctor</label>
-      <input type="email" class="form-control" name="referring_doctor" value="<?= $referring_doctor_name['referring_doctor_name']?>" disabled readonly>
+      <input type="email" class="form-control" name="referring_doctor" value="<?= $referring_doctor_name['referring_doctor_name'] ?>" disabled readonly>
     </div>
-    
 
-    <br>
+    <br />
+
     <div>
-      <label><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">I have a bike</label>
+      <h3>List title</h3>
+      <?php for ($i = 0; $i < 10; $i++): ?>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+      <?php endfor; ?>
     </div>
+
+    <div>
+      <h3>List title</h3>
+      <?php for ($i = 0; $i < 10; $i++): ?>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+      <?php endfor; ?>
+    </div>
+
+    <a href="patients"><button class="btn btn-link"> Back </button></a>
 
   </form>
 
-  <a href="patients"><button class="btn btn-link"> Back </button></a>
 
 </div>
 

@@ -99,20 +99,15 @@
       <input type="email" class="form-control" name="email" value="<?= $patient['email'] ?>">
     </div>
 
-    <!-- <div>
-        <label class="form-label control-label">List of Current Medications</label>
-        <input type="text" class="form-control" name="listMedications">
-      </div>
-
-      <div>
-        <label class="form-label control-label">List of Allergies</label>
-        <input type="text" class="form-control" name="listAllergies">
-      </div>
-
-      <div>
-        <label class="form-label control-label">Referring Doctor</label>
-        <input type="text" class="form-control" name="referringDoctor">
-      </div> -->
+    <div>
+      <label class="form-label control-label">Doctor</label>
+      <select class="form-select" name="doctor_id">
+        <option selected><?= $patient_doctor_name['doctor_name'] ?? "Select a doctor"?></option>
+        <?php foreach ($doctors as $doctor) : ?>
+          <option value="<?= $doctor['doctor_id'] ?>"><?= $doctor['doctor_name'] ?> </option>
+        <?php endforeach; ?>
+      </select>
+    </div>
 
     <div>
       <h4>List title</h4>

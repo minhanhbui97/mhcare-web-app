@@ -7,6 +7,10 @@ $query = "UPDATE `patient` SET `first_name` = :first_name, `last_name` = :last_n
 
 // TO DO: missing columns
 
+// Get doctor from doctor table
+$query_2 = "SELECT doctor.doctor_id, CONCAT(employee.first_name, ' ', employee.last_name) as doctor_name FROM employee INNER JOIN doctor ON employee.employee_id = doctor.employee_id;";
+$doctors = $db->query($query_2)->get();
+// dumpAndDie($doctors);
 
 // Update current patient info
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
@@ -33,6 +37,8 @@ else {
     $query = "SELECT * FROM patient WHERE patient_id = :id";
     $patient = $db->query($query,[':id' => $current_patient_id])->find();
 
+    // Find doctor_id
+    $patient_doctor_name = $db->query("SELECT CONCAT(employee.first_name, ' ', employee.last_name) as doctor_name FROM employee INNER JOIN doctor ON employee.employee_id = doctor.employee_id INNER JOIN patient on doctor.doctor_id = patient.doctor_id WHERE patient_id = :id",['id' => $current_patient_id])->find();
 }
 
 require VIEW_PATH . "patient-edit.view.php";

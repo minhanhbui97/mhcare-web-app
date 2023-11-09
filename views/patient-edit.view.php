@@ -61,7 +61,7 @@
 
     <div>
       <label class="form-label control-label">Date of Birth</label>
-      <input type="text" class="form-control" name="date_of_birth" value="<?= $patient['date_of_birth'] ?>">
+      <input type="date" class="form-control" name="date_of_birth" value="<?= $patient['date_of_birth'] ?>">
     </div>
 
     <div>

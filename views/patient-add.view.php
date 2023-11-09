@@ -56,7 +56,7 @@
 
     <div class="required">
       <label class="form-label control-label">Date of Birth</label>
-      <input type="text" class="form-control" name="date_of_birth" required>
+      <input type="date" class="form-control" name="date_of_birth" required>
     </div>
 
     <div>
@@ -121,7 +121,7 @@
         <div class="form-check mb-2">
           <input class="form-check-input" type="checkbox" id="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
           <label class="form-check-label" for="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
-            <?= $medication['medication_name'] ?> 
+            <?= $medication['medication_name'] ?>
           </label>
         </div>
       <?php endforeach; ?>
@@ -133,7 +133,7 @@
         <div class="form-check mb-2">
           <input class="form-check-input" type="checkbox" id="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
           <label class="form-check-label" for="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
-            <?= $allergy['allergy_name'] ?> 
+            <?= $allergy['allergy_name'] ?>
           </label>
         </div>
       <?php endforeach; ?>

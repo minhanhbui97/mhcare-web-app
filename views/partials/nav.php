@@ -60,12 +60,18 @@
 
             <div>
 
-                
-            <?php if (urlIs('/') || urlIs('/index') || urlIs('/login')): ?>
-                <a type="button" class="btn btn-outline-primary log-btn" href="login">Employee Log In</a>
-            <?php else: ?>
-                <a type="button" class="btn btn-outline-primary log-btn" href="/">Log Out</a>
-            <?php endif; ?>
+
+                <?php if (urlIs('/') || urlIs('/index') || urlIs('/login')) : ?>
+                    <a type="button" class="btn btn-outline-primary log-btn" href="login">Employee Log In</a>
+                <?php else : ?>
+                    <!-- <a type="button" class="btn btn-outline-primary log-btn" href="/">Log Out</a> -->
+                    <form action="/logout" method="POST">
+                        <input type="hidden" value="<?= $patient['patient_id'] ?>" name="patient_id"></input>
+                        <button type="submit" class="btn btn-outline-primary log-btn">Log Out</button>
+                        <!-- <a type="button" class="btn btn-outline-primary log-btn" href="/">Log Out</a> -->
+
+                    </form>
+                <?php endif; ?>
 
             </div>
 

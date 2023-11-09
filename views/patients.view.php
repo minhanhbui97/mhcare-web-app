@@ -1,5 +1,3 @@
-<?php $name = "Mao Phoc" ; ?>
-
 <?php require('views/partials/head.php'); ?>
 
 <?php require('views/partials/nav.php'); ?>
@@ -15,7 +13,7 @@
                 Welcome to MH-Care Employee Workspace
             </h1>
             <h2 class="text-light banner-text">
-                You are logged in as <?= $name ?>
+                You are logged in as <?= $_SESSION['user']['username'] ?>
             </h2>
         </div>
     </div>
@@ -51,26 +49,29 @@
         </thead>
         <tbody>
 
-        <?php foreach ($patients as $patient) : ?>
-            <tr>
-                <th scope="row"><?= $patient['patient_id'] ?></th>
-                <td><?= $patient['first_name'] ?></td>
-                <td><?= $patient['last_name'] ?></td>
-                <td><?= $patient['gender'] ?></td>
-                <td><?= $patient['date_of_birth'] ?></td>
-                <td>
-                    <a href="/patient?id=<?= $patient['patient_id'] ?>" class="link-primary">View Details</a>
-                      |  
-                    <a href="/patient/edit?id=<?= $patient['patient_id'] ?>" class="link-secondary">Edit</a>
-                      |  
-                    <form action="/patient/delete" method="POST">
-                        <input type="hidden" value="<?= $patient['patient_id'] ?>" name="patient_id"></input>
-                        <button type="submit" class="btn btn-link">Remove</button>
-                    </form>
-                </td>
-            </tr>
+            <?php foreach ($patients as $patient) : ?>
+                <tr>
+                    <th scope="row"><?= $patient['patient_id'] ?></th>
+                    <td><?= $patient['first_name'] ?></td>
+                    <td><?= $patient['last_name'] ?></td>
+                    <td><?= $patient['gender'] ?></td>
+                    <td><?= $patient['date_of_birth'] ?></td>
+                    <td>
+                        <div class="d-flex align-items-center" style="margin-left: -10px;">
+                            <a href="/patient?id=<?= $patient['patient_id'] ?>" class="btn btn-link">View Details</a>
 
-        <?php endforeach; ?> 
+                            <a href="/patient/edit?id=<?= $patient['patient_id'] ?>" class="btn btn-link link-secondary">Edit</a>
+
+                            <form action="/patient/delete" method="POST">
+                                <input type="hidden" value="<?= $patient['patient_id'] ?>" name="patient_id"></input>
+                                <button type="submit" class="btn btn-link">Remove</button>
+                            </form>
+                        </div>
+
+                    </td>
+                </tr>
+
+            <?php endforeach; ?>
             <!-- <tr>
                 <th scope="row">1</th>
                 <td>Mark</td>

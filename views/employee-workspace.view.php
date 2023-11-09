@@ -15,7 +15,7 @@
                 Welcome to MH-Care Employee Workspace
             </h1>
             <h2 class="text-light banner-text">
-                You are logged in as <?= $username ?>
+                You are logged in as <?= $_SESSION['user']['username'] ?>
             </h2>
         </div>
     </div>

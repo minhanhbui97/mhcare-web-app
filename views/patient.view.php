@@ -1,5 +1,3 @@
-<?php $name = "Mao Phoc"; ?>
-
 <?php require('views/partials/head.php'); ?>
 
 <?php require('views/partials/nav.php'); ?>
@@ -15,7 +13,7 @@
         Welcome to MH-Care Employee Workspace
       </h1>
       <h2 class="text-light banner-text">
-        You are logged in as <?= $name ?>
+        You are logged in as <?= $_SESSION['user']['username'] ?>
       </h2>
     </div>
   </div>
@@ -33,7 +31,7 @@
     </ol>
   </nav>
 </div>
-<div class="container">
+<div class="container mb-4">
   <form class="form">
     <div class="full-width text-center">
       <h3>
@@ -91,7 +89,7 @@
     </div>
 
 
-    
+
     <div>
       <label class="form-label control-label">Postal Code</label>
       <input type="text" class="form-control" name="postal_code" value="<?= $patient['postal_code'] ?>" disabled readonly>
@@ -121,32 +119,32 @@
 
     <div>
       <h3>List title</h3>
-      <?php for ($i = 0; $i < 10; $i++): ?>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
+      <?php for ($i = 0; $i < 10; $i++) : ?>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" disabled checked>
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
       <?php endfor; ?>
     </div>
 
     <div>
       <h3>List title</h3>
-      <?php for ($i = 0; $i < 10; $i++): ?>
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          Check me out
-        </label>
-      </div>
+      <?php for ($i = 0; $i < 10; $i++) : ?>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
       <?php endfor; ?>
     </div>
 
-    <a href="patients"><button class="btn btn-link"> Back </button></a>
 
   </form>
 
+  <a href="patients"><button class="btn btn-link"> Back </button></a>
 
 </div>
 

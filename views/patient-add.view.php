@@ -1,5 +1,3 @@
-<?php $name = "Mao Phoc"; ?>
-
 <?php require(VIEW_PATH . 'partials/head.php'); ?>
 
 <?php require(VIEW_PATH . 'partials/nav.php'); ?>
@@ -15,7 +13,7 @@
         Welcome to MH-Care Employee Workspace
       </h1>
       <h2 class="text-light banner-text">
-        You are logged in as <?= $name ?>
+        You are logged in as <?= $_SESSION['user']['username'] ?>
       </h2>
     </div>
   </div>
@@ -120,6 +118,30 @@
       <label class="form-label control-label">Referring Doctor</label>
       <input type="text" class="form-control" name="referringDoctor">
     </div>
+    <br />
+    <div>
+      <h4>List title</h4>
+      <?php for ($i = 0; $i < 10; $i++) : ?>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      <?php endfor; ?>
+    </div>
+
+    <div>
+      <h4>List title</h4>
+      <?php for ($i = 0; $i < 10; $i++) : ?>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      <?php endfor; ?>
+    </div>
 
     <div class="full-width" style="text-align:center;">
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -128,6 +150,7 @@
     <!-- <div class="full-width" style="text-align:center;">
         <a href="http://localhost/employee-workspace"><button class="btn btn-secondary">Cancel</button></a>
       </div> -->
+
 
   </form>
 

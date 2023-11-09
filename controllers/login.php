@@ -18,6 +18,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         $passwords = array_column($users, 'password');
 
         if ($password === $passwords[$key]){
+            $_SESSION['user'] = [
+                'username' => $username
+            ];
+            
             header("Location: /employee-workspace");
             exit();
         }

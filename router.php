@@ -1,4 +1,4 @@
-<?php   
+<?php
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
@@ -16,19 +16,24 @@ $routes = [
     // '/edit-patient-detail' => 'controllers/edit-patient-detail.php',
     '/employee-workspace' => 'controllers/employee-workspace.php',
     '/login' => 'controllers/login.php',
+    '/logout' => 'controllers/logout.php',
 ];
 
-function routeToController($uri, $routes) {
-    // header("Location: /employee-workspace");
-
+function routeToController($uri, $routes)
+{
     if (array_key_exists($uri, $routes)) {
-        require $routes[$uri];
+        if ($uri !== '/' && $uri !== '/login' && !isset($_SESSION['user'])) {
+            header("Location: /login");
+        } else {
+            require $routes[$uri];
+        }
     } else {
         abort();
     }
 }
 
-function abort($code = 404) {
+function abort($code = 404)
+{
     http_response_code($code);
 
     require VIEW_PATH . "{$code}.php";
@@ -40,4 +45,3 @@ function abort($code = 404) {
 routeToController($uri, $routes);
 
 // header("Location: /employee-workspace");
-

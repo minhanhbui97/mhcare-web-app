@@ -6,7 +6,7 @@ require 'functions.php';
 require 'Database.php';
 require 'router.php';
 
-
+unset($_SESSION['_flash']);
 
 // $db_config = require('config.php');
 

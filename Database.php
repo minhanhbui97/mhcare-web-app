@@ -2,10 +2,12 @@
 
 class Database
 {
-    public $connection; 
+    public $connection;
     public $statement;
+    public $record;
 
-    public function __construct($config, $username='root', $password=''){
+    public function __construct($config, $username = 'root', $password = '')
+    {
         // data source name
         $dsn = "mysql:" . http_build_query($config, '', ';'); // host=localhost;port=3306;dbname=myapp;charset=utf8mb4
         $this->connection = new PDO($dsn, $username, $password, [
@@ -13,7 +15,7 @@ class Database
         ]);
     }
 
-    public function query($query, $params=[])
+    public function query($query, $params = [])
     {
         $this->statement = $this->connection->prepare($query);
 
@@ -31,6 +33,4 @@ class Database
     {
         return $this->statement->fetch();
     }
-    
 }
-

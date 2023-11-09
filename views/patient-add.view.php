@@ -119,7 +119,7 @@
       <label class="form-label control-label">List of Medications</label>
       <?php foreach ($medications as $medication) : ?>
         <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" id="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
+          <input class="form-check-input" type="checkbox" name="medication_check_list[]" value="<?= $medication['medication_id'] ?>" id="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
           <label class="form-check-label" for="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
             <?= $medication['medication_name'] ?>
           </label>
@@ -131,13 +131,15 @@
       <label class="form-label control-label">List of Allergies</label>
       <?php foreach ($allergies as $allergy) : ?>
         <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" id="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
+          <input class="form-check-input" type="checkbox" name="allergy_check_list[]" value="<?= $allergy['allergy_id'] ?>" id="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
           <label class="form-check-label" for="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
             <?= $allergy['allergy_name'] ?>
           </label>
         </div>
       <?php endforeach; ?>
     </div>
+
+
 
     <div class="full-width" style="text-align:center;">
       <button type="submit" class="btn btn-primary">Submit</button>

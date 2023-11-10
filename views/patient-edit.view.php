@@ -103,7 +103,7 @@ require(VIEW_PATH . 'partials/head.php'); ?>
           array("value" => "YT", "name" => "Yukon"),
         );
         ?>
-        
+
         <?php foreach ($list_province as $province) : ?>
           <option value="<?= $province['value'] ?>" <?=
                                                     isset($existing_province['province']) && $existing_province['province'] === $province['value'] ? 'selected' : ''
@@ -164,6 +164,8 @@ require(VIEW_PATH . 'partials/head.php'); ?>
         <?php endforeach; ?>
       </select>
     </div>
+
+    <br />
 
     <div>
       <label class="form-label control-label h6">List of Medications</label>

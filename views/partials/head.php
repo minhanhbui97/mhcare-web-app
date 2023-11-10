@@ -15,4 +15,4 @@
 
 </head>
 
-<body>
+<body style="min-height: 100vh" class="d-flex flex-column">

@@ -2,7 +2,7 @@
 <?php require ('views/partials/head.php'); ?>
 
 <?php require ('views/partials/nav.php'); ?>
-
+<div class="flex-grow-1">
   <div class="container-fluid banner">
     <div class="row align-items-center justify-content-between">
       <div class="col-md image-container">
@@ -40,6 +40,7 @@
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </div>
+</div>
 
 <?php require ('views/partials/footer.php'); ?>
 

@@ -1,6 +1,0 @@
-[] escape all user input where it can be displayed (e.g. patient info)
-[] style page 404
-[] flex footer to the bottom of all pages (patient.view is missing footer e.g.)
-[] empty space at bottom of form when unchecked checkboxes are hidden
-[] input mask for phone number, postal code
-[] patient.view doctor when null

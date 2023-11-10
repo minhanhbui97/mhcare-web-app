@@ -34,7 +34,7 @@
 <div class="container mb-4">
   <form class="form">
     <div class="full-width text-center h2">
-        Patient Information
+      Patient Information
     </div>
 
 
@@ -116,16 +116,13 @@
         return $item['medication_id'];
       }, $existing_medication_ids);
       ?>
-
-      <?php foreach ($medications as $medication) : ?>
-        <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" name="medication_check_list[]" value="<?= $medication['medication_id'] ?>" id="<?= "gridCheck-m-" . $medication['medication_id'] ?>" <?= !in_array($medication['medication_id'], $medication_ids) ? 'hidden' : 'style = "opacity:0;"' ?> />
-
-          <label class="form-check-label" for="<?= "gridCheck-m-" . $medication['medication_id'] ?>" <?= !in_array($medication['medication_id'], $medication_ids) ? 'hidden' : '' ?>>
-            <?= $medication['medication_name'] ?>
-          </label>
-        </div>
-      <?php endforeach; ?>
+      <ul>
+        <?php foreach ($medications as $medication) : ?>
+          <?php if (in_array($medication['medication_id'], $medication_ids)) : ?>
+            <li><?= $medication['medication_name'] ?></li>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </ul>
     </div>
 
     <div>
@@ -136,16 +133,13 @@
         return $item['allergy_id'];
       }, $existing_allergie_ids);
       ?>
-
-    <?php foreach ($allergies as $allergy) : ?>
-        <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" name="allergy_check_list[]" value="<?= $allergy['allergy_id'] ?>" id="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>" <?= !in_array($allergy['allergy_id'], $allergy_ids) ? 'hidden' : 'style = "opacity:0;"' ?> />
-
-          <label class="form-check-label" for="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>" <?= !in_array($allergy['allergy_id'], $allergy_ids) ? 'hidden' : '' ?>>
-            <?= $allergy['allergy_name'] ?>
-          </label>
-        </div>
-      <?php endforeach; ?>
+      <ul>
+        <?php foreach ($allergies as $allergy) : ?>
+          <?php if (in_array($allergy['allergy_id'], $allergy_ids)) : ?>
+            <li><?= $allergy['allergy_name'] ?></li>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </ul>
     </div>
 
   </form>

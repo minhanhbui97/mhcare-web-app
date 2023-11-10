@@ -24,7 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Transaction to handle series of queries
     try {
         $db->connection->beginTransaction();
-        dumpAndDie($_POST);
         // Insert into patient table
         // Handle nullable fields
         $address_1 = !empty($_POST['address_1']) ? $_POST['address_1'] : NULL;
@@ -67,6 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'doctor_id' => $doctor_id,
             'referring_doctor_id' => $referring_doctor_id
         ]);
+        $db->statement->closeCursor();
         $new_patient_id = $db->connection->lastInsertId();
 
         // Insert into patient_medication table

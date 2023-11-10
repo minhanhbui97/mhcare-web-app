@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $db->connection->rollBack();
         dumpAndDie($e->getMessage());
     }
-    header("Location: /patients");
+    header("Location: /patient?id=" . $new_patient_id);
 };
 
 

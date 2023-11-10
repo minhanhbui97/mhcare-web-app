@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $db->connection->rollBack();
     }
 
-    header("Location: /patients");
+    header("Location: /patient?id=" . $_POST['patient_id']);
 } else {
     $current_patient_id = $_GET['id'];
 

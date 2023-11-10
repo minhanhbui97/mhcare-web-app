@@ -29,7 +29,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $address_1 = !empty($_POST['address_1']) ? $_POST['address_1'] : NULL;
         $address_2 = !empty($_POST['address_2']) ? $_POST['address_2'] : NULL;
         $city = !empty($_POST['city']) ? $_POST['city'] : NULL;
-        $province = !empty($_POST['province']) ? $_POST['province'] : NULL;
+        
+        if ($_POST['province'] === "Select a province"){
+            $province = NULL;
+        }
+        else{
+            $province = $_POST['province'];
+        }
+
         $postal_code = !empty($_POST['postal_code']) ? $_POST['postal_code'] : NULL;
         $phone_number = !empty($_POST['phone_number']) ? $_POST['phone_number'] : NULL;
         $email = !empty($_POST['email']) ? $_POST['email'] : NULL;

@@ -24,78 +24,90 @@
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">Home</li>
-      <li class="breadcrumb-item"><a href="http://localhost/employee-workspace">Employee Workspace</a></li>
+      <li class="breadcrumb-item"><a href="../employee-workspace">Employee Workspace</a></li>
       <li class="breadcrumb-item" aria-current="page">Register New Patient</li>
-
     </ol>
   </nav>
 </div>
+
 <div class="container">
   <form action="/patient/add" method="POST" class="form">
-    <div class="full-width text-center">
-      <h3>
-        Register New Patient
-      </h3>
-
+    <div class="full-width text-center h2">
+      Register New Patient
     </div>
 
     <div class="required">
-      <label class="form-label control-label">First Name</label>
+      <label class="form-label control-label h6">First Name</label>
       <input type="text" class="form-control" name="first_name" required>
     </div>
 
     <div class="required">
-      <label class="form-label control-label">Last Name</label>
+      <label class="form-label control-label h6">Last Name</label>
       <input type="text" class="form-control" name="last_name" required>
     </div>
 
     <div class="required">
-      <label class="form-label control-label">Gender</label>
+      <label class="form-label control-label h6">Gender</label>
       <input type="text" class="form-control" name="gender" required>
     </div>
 
     <div class="required">
-      <label class="form-label control-label">Date of Birth</label>
+      <label class="form-label control-label h6">Date of Birth</label>
       <input type="date" class="form-control" name="date_of_birth" required>
     </div>
 
     <div>
-      <label class="form-label control-label">Address 1</label>
+      <label class="form-label control-label h6">Address 1</label>
       <input type="text" class="form-control" name="address_1">
     </div>
 
     <div>
-      <label class="form-label control-label">Address 2</label>
+      <label class="form-label control-label h6">Address 2</label>
       <input type="text" class="form-control" name="address_2">
     </div>
 
     <div>
-      <label class="form-label control-label">City</label>
+      <label class="form-label control-label h6">City</label>
       <input type="text" class="form-control" name="city">
     </div>
 
     <div>
-      <label class="form-label control-label">Province</label>
-      <input type="text" class="form-control" name="province">
+      <label for="province_select" class="form-label">Province</label>
+      <select class="form-select" name="province" id="province">
+        <option selected>Select a province</option>
+        <option value="AB">Alberta</option>
+        <option value="BC">British Columbia</option>
+        <option value="MB">Manitoba</option>
+        <option value="NB">New Brunswick</option>
+        <option value="NL">Newfoundland and Labrador</option>
+        <option value="NS">Nova Scotia</option>
+        <option value="NT">Northwest Territories</option>
+        <option value="NU">Nunavut</option>
+        <option value="ON">Ontario</option>
+        <option value="PE">Prince Edward Island</option>
+        <option value="QC">Quebec</option>
+        <option value="SK">Saskatchewan</option>
+        <option value="YT">Yukon</option>
+      </select>
     </div>
 
     <div>
-      <label class="form-label control-label">Postal Code</label>
+      <label class="form-label control-label h6">Postal Code</label>
       <input type="text" class="form-control" name="postal_code">
     </div>
 
     <div>
-      <label class="form-label control-label">Phone Number</label>
+      <label class="form-label control-label h6">Phone Number</label>
       <input type="tel" class="form-control" name="phone_number">
     </div>
 
     <div>
-      <label class="form-label control-label">Email</label>
+      <label class="form-label control-label h6">Email</label>
       <input type="email" class="form-control" name="email">
     </div>
 
     <div>
-      <label class="form-label control-label">Doctor</label>
+      <label class="form-label control-label h6">Doctor</label>
       <select class="form-select" name="doctor_id">
         <option selected>Select a doctor</option>
         <?php foreach ($doctors as $doctor) : ?>
@@ -105,7 +117,7 @@
     </div>
 
     <div>
-      <label class="form-label control-label">Referring Doctor</label>
+      <label class="form-label control-label h6">Referring Doctor</label>
       <select class="form-select" name="referring_doctor_id">
         <option selected>Select a doctor</option>
         <?php foreach ($referring_doctors as $referring_doctor) : ?>
@@ -116,7 +128,7 @@
 
     <br />
     <div>
-      <label class="form-label control-label">List of Medications</label>
+      <label class="form-label control-label h6">List of Medications</label>
       <?php foreach ($medications as $medication) : ?>
         <div class="form-check mb-2">
           <input class="form-check-input" type="checkbox" name="medication_check_list[]" value="<?= $medication['medication_id'] ?>" id="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
@@ -128,7 +140,7 @@
     </div>
 
     <div>
-      <label class="form-label control-label">List of Allergies</label>
+      <label class="form-label control-label h6">List of Allergies</label>
       <?php foreach ($allergies as $allergy) : ?>
         <div class="form-check mb-2">
           <input class="form-check-input" type="checkbox" name="allergy_check_list[]" value="<?= $allergy['allergy_id'] ?>" id="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
@@ -144,6 +156,8 @@
     </div>
 
   </form>
+
+  <a href="../patients"><button class="btn btn-link"> Back </button></a>
 
 </div>
 

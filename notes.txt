@@ -1,6 +1,6 @@
-- escape all user input where it can be displayed (e.g. patient info)
-- update You are logged in as <?= $name ?>
-- login: TO DO: If username or password not match, show an error message
-
-- view patient: to-do allergy, medication list/checkboxes
-- add/edit patient: to-do doctor select box, allergy, medication checkboxes
+[] escape all user input where it can be displayed (e.g. patient info)
+[] style page 404
+[] flex footer to the bottom of all pages (patient.view is missing footer e.g.)
+[] empty space at bottom of form when unchecked checkboxes are hidden
+[] input mask for phone number, postal code
+[] patient.view doctor when null

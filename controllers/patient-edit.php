@@ -6,19 +6,19 @@ $db = new Database($db_config['database']);
 
 // Get doctor from doctor table
 $query_2 = "SELECT doctor.doctor_id, CONCAT(employee.first_name, ' ', employee.last_name) as doctor_name FROM employee INNER JOIN doctor ON employee.employee_id = doctor.employee_id;";
-$doctors = $db->query($query_2)->get();
+$doctors = $db->query($query_2, [])->get();
 
 // Get referring_doctor from referring_doctor table
 $query_3 = "SELECT referring_doctor.referring_doctor_id, CONCAT(referring_doctor.first_name, ' ', referring_doctor.last_name) as referring_doctor_name FROM referring_doctor;";
-$referring_doctors = $db->query($query_3)->get();
+$referring_doctors = $db->query($query_3, [])->get();
 
 // Get list of medications
 $query_4 = "SELECT * FROM medication";
-$medications = $db->query($query_4)->get();
+$medications = $db->query($query_4, [])->get();
 
 // Get list of allergies
 $query_5 = "SELECT * FROM allergy";
-$allergies = $db->query($query_5)->get();
+$allergies = $db->query($query_5, [])->get();
 
 // Update current patient info
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -30,7 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $address_1 = !empty($_POST['address_1']) ? $_POST['address_1'] : NULL;
         $address_2 = !empty($_POST['address_2']) ? $_POST['address_2'] : NULL;
         $city = !empty($_POST['city']) ? $_POST['city'] : NULL;
-        $province = !empty($_POST['province']) ? $_POST['province'] : NULL;
+
+        if ($_POST['province'] === "Select a province") {
+            $province = NULL;
+        } else {
+            $province = $_POST['province'];
+        }
+
         $postal_code = !empty($_POST['postal_code']) ? $_POST['postal_code'] : NULL;
         $phone_number = !empty($_POST['phone_number']) ? $_POST['phone_number'] : NULL;
         $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
@@ -167,19 +173,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: /patients");
 } else {
     $current_patient_id = $_GET['id'];
-    
-    $query_0 = "SELECT * FROM patient WHERE patient_id = :id";
-    $patient = $db->query($query_0, [':id' => $current_patient_id])->find();
 
-    // Find selected doctor_id
-    $query_6 = "SELECT doctor.doctor_id, CONCAT(employee.first_name, ' ', employee.last_name) as doctor_name FROM employee INNER JOIN doctor ON employee.employee_id = doctor.employee_id INNER JOIN patient on doctor.doctor_id = patient.doctor_id WHERE patient_id = :id";
-    $existing_doctor = $db->query($query_6, ['id' => $current_patient_id])->find();
+    $query_0 = "SELECT * FROM patient WHERE patient_id = :patient_id";
+    $patient = $db->query($query_0, [':patient_id' => $current_patient_id])->find();
+
+    // Find existing province
+    $query_18 = "SELECT province FROM patient WHERE patient_id = :patient_id";
+    $existing_province = $db->query($query_18, ['patient_id' => $current_patient_id])->find();
+
+    // Find existing doctor_id
+    $query_6 = "SELECT doctor.doctor_id, CONCAT(employee.first_name, ' ', employee.last_name) as doctor_name FROM employee INNER JOIN doctor ON employee.employee_id = doctor.employee_id INNER JOIN patient on doctor.doctor_id = patient.doctor_id WHERE patient_id = :patient_id";
+    $existing_doctor = $db->query($query_6, ['patient_id' => $current_patient_id])->find();
 
     if (!($existing_doctor)) {
         $existing_doctor = NULL;
     }
 
-    // Find selected referring_doctor_id
+    // Find existing referring_doctor_id
     $query_7 = "SELECT referring_doctor.referring_doctor_id, CONCAT(referring_doctor.first_name, ' ', referring_doctor.last_name) as referring_doctor_name FROM referring_doctor INNER JOIN patient on referring_doctor.referring_doctor_id = patient.referring_doctor_id WHERE patient_id = :patient_id;";
     $existing_referring_doctor = $db->query($query_7, ['patient_id' => $current_patient_id])->find();
 
@@ -187,11 +197,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $existing_referring_doctor = NULL;
     }
 
-    // Get selected medications
+    // Get existing medications
     $query_8 = "SELECT medication_id FROM patient_medication WHERE patient_id = :patient_id;";
     $existing_medication_ids = $db->query($query_8, ['patient_id' => $current_patient_id])->get();
 
-    // Get selected allergies
+    // Get existing allergies
     $query_9 = "SELECT allergy_id FROM patient_allergy WHERE patient_id = :patient_id;";
     $existing_allergie_ids = $db->query($query_9, ['patient_id' => $current_patient_id])->get();
 }

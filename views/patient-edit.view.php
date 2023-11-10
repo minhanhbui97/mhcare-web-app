@@ -43,6 +43,7 @@
       <label class="form-label control-label">Patient ID</label>
       <input type="text" class="form-control" name="patient_id" value="<?= $patient['patient_id'] ?>" readonly>
     </div>
+    <!-- TO DO: Style input to make it more visible that it is disabled, can't use attribute disabled -->
 
     <div>
       <label class="form-label control-label">First Name</label>
@@ -102,36 +103,60 @@
     <div>
       <label class="form-label control-label">Doctor</label>
       <select class="form-select" name="doctor_id">
-        <option selected><?= $patient_doctor_name['doctor_name'] ?? "Select a doctor"?></option>
+        <option value="Select a doctor" <?= !isset($existing_doctor) ? 'selected' : '' ?>>Select a doctor</option>
         <?php foreach ($doctors as $doctor) : ?>
-          <option value="<?= $doctor['doctor_id'] ?>"><?= $doctor['doctor_name'] ?> </option>
+          <option value="<?= $doctor['doctor_id'] ?>" <?=
+                                                      isset($existing_doctor) && $existing_doctor['doctor_id'] === $doctor['doctor_id'] ? 'selected' : ''
+                                                      ?>><?= $doctor['doctor_name'] ?> </option>
+
+        <?php endforeach; ?>
+      </select>
+    </div>
+
+
+    <div>
+      <label class="form-label control-label">Referring Doctor</label>
+      <select class="form-select" name="referring_doctor_id">
+        <option value="Select a doctor" <?= !isset($existing_referring_doctor) ? 'selected' : '' ?>>Select a doctor</option>
+        <?php foreach ($referring_doctors as $referring_doctor) : ?>
+          <option value="<?= $referring_doctor['referring_doctor_id'] ?>" <?=
+                                                      isset($existing_referring_doctor) && $existing_referring_doctor['referring_doctor_id'] === $referring_doctor['referring_doctor_id'] ? 'selected' : ''
+                                                      ?>><?= $referring_doctor['referring_doctor_name'] ?> </option>
         <?php endforeach; ?>
       </select>
     </div>
 
     <div>
-      <h4>List title</h4>
-      <?php for ($i = 0; $i < 10; $i++) : ?>
-        <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" id="gridCheck" disabled checked>
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
-        </div>
-      <?php endfor; ?>
-    </div>
+      <label class="form-label control-label">List of Medications</label>
 
-    <div>
-      <h4>List title</h4>
-      <?php for ($i = 0; $i < 10; $i++) : ?>
+      <?php
+      $medication_ids = array_map(function ($item) {
+        return $item['medication_id'];
+      }, $existing_medications);
+      ?>
+
+      <?php foreach ($medications as $medication) : ?>
         <div class="form-check mb-2">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
+          <input class="form-check-input" type="checkbox" name="medication_check_list[]" value="<?= $medication['medication_id'] ?>" id="<?= "gridCheck-m-" . $medication['medication_id'] ?>" <?= in_array($medication['medication_id'], $medication_ids) ? 'checked' : '' ?> />
+
+          <label class="form-check-label" for="<?= "gridCheck-m-" . $medication['medication_id'] ?>">
+            <?= $medication['medication_name'] ?>
           </label>
         </div>
-      <?php endfor; ?>
+      <?php endforeach; ?>
     </div>
+    <!-- $medication['medication_id'] -->
+    <!-- <div>
+      <label class="form-label control-label">List of Allergies</label>
+      <?php foreach ($allergies as $allergy) : ?>
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="checkbox" name="allergy_check_list[]" value="<?= $allergy['allergy_id'] ?>" id="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
+          <label class="form-check-label" for="<?= "gridCheck-a-" . $allergy['allergy_id'] ?>">
+            <?= $allergy['allergy_name'] ?>
+          </label>
+        </div>
+      <?php endforeach; ?>
+    </div> -->
 
     <div class="full-width" style="text-align:center;">
       <button type="submit" class="btn btn-primary">Submit</button>

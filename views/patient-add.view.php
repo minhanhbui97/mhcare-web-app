@@ -139,8 +139,6 @@
       <?php endforeach; ?>
     </div>
 
-
-
     <div class="full-width" style="text-align:center;">
       <button type="submit" class="btn btn-primary">Submit</button>
     </div>

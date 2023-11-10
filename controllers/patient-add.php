@@ -24,18 +24,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Transaction to handle series of queries
     try {
         $db->connection->beginTransaction();
-
+        dumpAndDie($_POST);
         // Insert into patient table
         // Handle nullable fields
-        $address_1 = !empty($address_1) ? $address_1 : NULL;
-        $address_2 = !empty($address_2) ? $address_2 : NULL;
-        $city = !empty($city) ? $city : NULL;
-        $province = !empty($province) ? $province : NULL;
-        $postal_code = !empty($postal_code) ? $postal_code : NULL;
-        $phone_number = !empty($phone_number) ? $phone_number : NULL;
-        $email = !empty($email) ? $email : NULL;
-        $doctor_id = !empty($doctor_id) ? $doctor_id : NULL;
-        $referring_doctor_id = !empty($referring_doctor_id) ? $referring_doctor_id : NULL;
+        $address_1 = !empty($_POST['address_1']) ? $_POST['address_1'] : NULL;
+        $address_2 = !empty($_POST['address_2']) ? $_POST['address_2'] : NULL;
+        $city = !empty($_POST['city']) ? $_POST['city'] : NULL;
+        $province = !empty($_POST['province']) ? $_POST['province'] : NULL;
+        $postal_code = !empty($_POST['postal_code']) ? $_POST['postal_code'] : NULL;
+        $phone_number = !empty($_POST['phone_number']) ? $_POST['phone_number'] : NULL;
+        $email = !empty($_POST['email']) ? $_POST['email'] : NULL;
+
+        if ($_POST['doctor_id'] === "Select a doctor"){
+            $doctor_id = NULL;
+        }
+        else{
+            $doctor_id = $_POST['doctor_id'];
+        }
+
+        if ($_POST['referring_doctor_id'] === "Select a doctor"){
+            $referring_doctor_id = NULL;
+        }
+        else{
+            $referring_doctor_id = $_POST['referring_doctor_id'];
+        }
 
 
         $query_1 = "INSERT INTO `patient` (`patient_id`, `first_name`, `last_name`, `gender`, `date_of_birth`, `address_1`, `address_2`, `city`, `province`, `postal_code`, `phone_number`, `email`, `doctor_id`, `referring_doctor_id`) VALUES (NULL, :first_name, :last_name, :gender, :date_of_birth, :address_1, :address_2, :city, :province, :postal_code, :phone_number, :email, :doctor_id, :referring_doctor_id);";

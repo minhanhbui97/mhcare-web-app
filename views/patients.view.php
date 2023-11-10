@@ -64,7 +64,7 @@
 
                             <form action="/patient/delete" method="POST">
                                 <input type="hidden" value="<?= $patient['patient_id'] ?>" name="patient_id"></input>
-                                <button type="submit" class="btn btn-link">Remove</button>
+                                <button type="submit" class="btn btn-link link-danger">Remove</button>
                             </form>
                         </div>
 
@@ -72,34 +72,6 @@
                 </tr>
 
             <?php endforeach; ?>
-            <!-- <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>Male</td>
-                <td>May 23rd, 1989</td>
-                <td>
-                    <a href="#" class="link-primary">View Details</a>
-                      |  
-                    <a href="#" class="link-secondary">Edit</a>
-                      |  
-                    <a href="#" class="link-secondary">Remove</a>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>Female</td>
-                <td>April 1st, 1994</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-                <td>Brenda</td>
-                <td>Watson</td>
-                <td>Female</td>
-                <td>January 10th, 1996</td>
-            </tr> -->
         </tbody>
     </table>
 

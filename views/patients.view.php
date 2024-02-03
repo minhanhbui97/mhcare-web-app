@@ -35,13 +35,13 @@
         <h1 class="text-center">
             MH-Care Patient List
         </h1>
-
+        
         <table class="table table-hover" style="margin-top: 2rem">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
+                    <th scope="col">First Name</th>
                     <th scope="col">Gender</th>
                     <th scope="col">DOB</th>
                     <th scope="col">Actions</th>
@@ -52,8 +52,8 @@
                 <?php foreach ($patients as $patient) : ?>
                     <tr>
                         <th scope="row"><?= $patient['patient_id'] ?></th>
-                        <td><?= $patient['first_name'] ?></td>
                         <td><?= $patient['last_name'] ?></td>
+                        <td><?= $patient['first_name'] ?></td>
                         <td><?= $patient['gender'] ?></td>
                         <td><?= $patient['date_of_birth'] ?></td>
                         <td>
@@ -74,6 +74,9 @@
                 <?php endforeach; ?>
             </tbody>
         </table>
+
+        <p class="fw-light">* The Patient list is ordered by Last Name and First Name</p>
+
 
 
     </div>
